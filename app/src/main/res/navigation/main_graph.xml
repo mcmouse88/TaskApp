@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.mcmouse88.taskapp.presentation.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mcmouse88.taskapp.presentation.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailTaskFragment"
+            app:destination="@id/detailTaskFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_habitFragment"
+            app:destination="@id/habitFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_recurringEventFragment"
+            app:destination="@id/recurringEventFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_newTaskFragment"
+            app:destination="@id/newTaskFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTaskFragment"
+        android:name="com.mcmouse88.taskapp.presentation.fragments.DetailTaskFragment"
+        android:label="fragment_detail_task"
+        tools:layout="@layout/fragment_detail_task" />
+    <fragment
+        android:id="@+id/habitFragment"
+        android:name="com.mcmouse88.taskapp.presentation.fragments.HabitFragment"
+        android:label="fragment_habit"
+        tools:layout="@layout/fragment_habit" />
+    <fragment
+        android:id="@+id/recurringEventFragment"
+        android:name="com.mcmouse88.taskapp.presentation.fragments.RecurringEventFragment"
+        android:label="fragment_recurring_event"
+        tools:layout="@layout/fragment_recurring_event" />
+    <fragment
+        android:id="@+id/newTaskFragment"
+        android:name="com.mcmouse88.taskapp.presentation.fragments.NewTaskFragment"
+        android:label="fragment_new_task"
+        tools:layout="@layout/fragment_new_task" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mcmouse88.taskapp.presentation.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

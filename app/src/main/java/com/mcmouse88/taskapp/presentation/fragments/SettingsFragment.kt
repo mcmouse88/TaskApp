@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.mcmouse88.taskapp.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
@@ -19,6 +20,13 @@ class SettingsFragment : Fragment() {
     ): View {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.buttonDoneSettings.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     override fun onDestroy() {
