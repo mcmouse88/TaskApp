@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.mcmouse88.taskapp.R
 import com.mcmouse88.taskapp.databinding.FragmentMainBinding
 
@@ -36,33 +37,88 @@ class MainFragment : Fragment() {
         launchNewTaskFragment()
     }
 
-    private fun launchHabitFragment() {
+    private fun launchHabitFragment(args: Bundle? = null) {
         binding.goToHabit.setOnClickListener {
-            navController.navigate(R.id.action_mainFragment_to_habitFragment)
+            navController.navigate(
+                R.id.action_mainFragment_to_habitFragment,
+                args,
+                navOptions {
+                    anim {
+                        enter = R.anim.slide_in_right
+                        exit = R.anim.fade_out
+                        popEnter = R.anim.fade_in
+                        popExit = R.anim.slide_out_right
+                    }
+                }
+            )
         }
     }
 
-    private fun launchNewTaskFragment() {
+    private fun launchNewTaskFragment(args: Bundle? = null) {
         binding.goToNewTask.setOnClickListener {
-            navController.navigate(R.id.action_mainFragment_to_newTaskFragment)
+            navController.navigate(
+                R.id.action_mainFragment_to_newTaskFragment,
+                args,
+                navOptions {
+                    anim {
+                        enter = R.anim.slide_in_bottom
+                        exit = R.anim.fade_out
+                        popEnter = R.anim.fade_in
+                        popExit = R.anim.slide_out_bottom
+                    }
+                }
+            )
         }
     }
 
-    private fun launchRecurringFragment() {
+    private fun launchRecurringFragment(args: Bundle? = null) {
         binding.goToRecurring.setOnClickListener {
-            navController.navigate(R.id.action_mainFragment_to_recurringEventFragment)
+            navController.navigate(
+                R.id.action_mainFragment_to_recurringEventFragment,
+                args,
+                navOptions {
+                    anim {
+                        enter = R.anim.slide_in_right
+                        exit = R.anim.fade_out
+                        popEnter = R.anim.fade_in
+                        popExit = R.anim.slide_out_right
+                    }
+                }
+            )
         }
     }
 
-    private fun launchDetailFragment() {
+    private fun launchDetailFragment(args: Bundle? = null) {
         binding.goToDetailTask.setOnClickListener {
-            navController.navigate(R.id.action_mainFragment_to_detailTaskFragment)
+            navController.navigate(
+                R.id.action_mainFragment_to_detailTaskFragment,
+                args,
+                navOptions {
+                    anim {
+                        enter = R.anim.slide_in_bottom
+                        exit = R.anim.fade_out
+                        popEnter = R.anim.fade_in
+                        popExit = R.anim.slide_out_bottom
+                    }
+                }
+            )
         }
     }
 
-    private fun launchSettingsFragment() {
+    private fun launchSettingsFragment(args: Bundle? = null) {
         binding.goToSettings.setOnClickListener {
-            navController.navigate(R.id.action_mainFragment_to_settingsFragment)
+            navController.navigate(
+                R.id.action_mainFragment_to_settingsFragment,
+                args,
+                navOptions {
+                    anim {
+                        enter = R.anim.slide_in_right
+                        exit = R.anim.fade_out
+                        popEnter = R.anim.fade_in
+                        popExit = R.anim.slide_out_right
+                    }
+                }
+            )
         }
     }
 
