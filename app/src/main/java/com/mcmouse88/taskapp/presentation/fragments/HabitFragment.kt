@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.mcmouse88.taskapp.databinding.FragmentHabitBinding
 
 class HabitFragment : Fragment() {
@@ -19,6 +20,13 @@ class HabitFragment : Fragment() {
     ): View {
         _binding = FragmentHabitBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.buttonDoneHabit.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     override fun onDestroy() {
